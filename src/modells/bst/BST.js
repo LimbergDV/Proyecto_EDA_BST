@@ -42,12 +42,40 @@ class BST {
     }
   }
 
+  min(){
+    return this.minNode(this.#root)
+  }
 
+  minNode(node){
+    if(node == null || node.left == null){
+        return node;
+    } else{
+        return this.minNode(node.left);
+    }
+  }
 
+  max(){
+    return this.maxNode(this.#root)
+  }
 
+  maxNode(node){
+    if(node == null || node.right == null){
+        return node;
+    } else{
+        return this.maxNode(node.right);
+    }
+  }
 
+  recorridoInorden(node, callback){
+    if(node !== null){
+        this.recorridoInorden(node.left, callback);
+        callback(node);
+        this.recorridoInorden(node.right, callback);
+    }
+  }
 
-
-
+  getRoot(){
+    return this.#root;
+  }
 }
 export default BST;

@@ -28,3 +28,39 @@ btnSearch.addEventListener("click", ()=>{
         alert(`Encontré al producto: ${bst.search(name, category, supplier, price).value.name}`);
     }
 });
+
+let btnValueMin = document.getElementById("valueMin")
+btnValueMin.addEventListener("click", ()=>{
+    let result = bst.min();
+    
+    if(result == null){
+        alert("No se encontró");
+    } else{
+        alert(`Encontré el producto: ${result.value.name} que es el menor`);
+    }
+});
+
+let btnValueMax = document.getElementById("valueMax")
+btnValueMax.addEventListener("click", ()=>{
+    let result = bst.max();
+
+    if(result == null){
+        alert("No se encontró");
+    } else {
+        alert(`Encontré el producto: ${result.value.name} que es el mayor`);
+    }
+});
+
+let btnRecorrerArbol = document.getElementById("printData");
+btnRecorrerArbol.addEventListener("click", ()=>{
+    const imprimir =(node)=>{
+        let apartado = document.getElementById("productos");
+
+        let etiqueta = document.createElement("p");
+        etiqueta.innerText = `Nombre: ${node.value.name}, Categoría: ${node.value.category}, Proveedor: ${node.value.supplier}, Precio: $${node.value.price}`;
+        apartado.appendChild(etiqueta);
+    }
+
+    bst.recorridoInorden(bst.getRoot(), imprimir);
+});
+

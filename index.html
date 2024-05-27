@@ -4,33 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto EDA Binary Search Tree</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cont1">
+    <p class="textPrincipal">Productos tienda de abarrotes</p>
+    </div>
+    <br> <br> 
+    <div class="form-container">
+    <h2>Registrar Producto</h2>
     <input id="name" type="text" placeholder="Escribe el nombre del producto">
     <input id="category" type="text" placeholder="Escribe la categoría">
     <input id="supplier" type="text" placeholder="Escribe un proveedor">
     <input id="price" type="text" placeholder="Escribe el precio">
     <button id="btn-add">Agregar producto</button>
-    <br> <br>
-    <label for="">Ingresa el nombre: </label>
-    <input id="nameSearch" type="text">
-    <br> <br>
-    <label for="">Ingresa la categoria: </label>
-    <input id="categorySearch" type="text">
-    <br> <br>
-    <label for="">Ingresa el proveedor: </label>
-    <input id="supplierSearch" type="text">
-    <br> <br>
-    <label for="">Ingresa el precio: </label>
-    <input id="priceSearch" type="text">
+    </div>
 
+    <br> <br>
+    <div class="form-container2">
+        <h2>Buscar Producto</h2>
+    <input id="nameSearch" type="text" placeholder="Escribe el nombre del producto">
+
+    <input id="categorySearch" type="text" placeholder="Escribe la categoría del producto">
+
+    <input id="supplierSearch" type="text" placeholder="Escribe el proveedor del producto">
+
+    <input id="priceSearch" type="text" placeholder="Escribe el precio del producto">
+
+    <div>
     <button id="btnSearch">Buscar</button>
     <button id="valueMin">Minimo</button>
     <button id="valueMax">Máximo</button>
-    <br> <br>
+    </div>
+    </div>
 
+    <div class="btnImprimir">
     <button id="printData">Imprimir Datos</button>
+    </div>
 
+    <div id="productos">
+        <h3>Todos los productos: </h3>
+        <div id="productos-lista"></div>
+    </div>    
 
     <script type="module" src="src/controllers/script.js"></script>
 </body>
